@@ -26,7 +26,7 @@ app.use((err, request, response, next) => {
     }
     console.log(err);
     return response.status(500).json({
-        status: err,
+        status: 'error',
         message: 'Internal server error',
     });
 });
