@@ -24,7 +24,7 @@ denunciationsRouter.post(
     console.log(request.files);
     const images_url: string[] = [];
     const files = JSON.parse(JSON.stringify(request.files));
-    files.forEach((file: Express.Multer.File) => {
+    files.forEach((file: Express.MulterS3.File) => {
       images_url.push(file.location);
     });
 
@@ -38,7 +38,7 @@ denunciationsRouter.post(
 
     const res = await denunciationRepository.save(denunciation);
 
-    return response.status(201).json(res);
+    return response.json(res);
   },
 );
 /* Deletar Denuncias */

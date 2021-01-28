@@ -31,7 +31,7 @@ denunciationsRouter.post('/', upload.array('file', 12), async (request, response
         images_url,
     };
     const res = await denunciationRepository.save(denunciation);
-    return response.status(201).json(res);
+    return response.json(res);
 });
 /* Deletar Denuncias */
 denunciationsRouter.delete('/id', async (request, response) => {
