@@ -22,7 +22,7 @@ denunciationsRouter.post('/', upload.array('file', 12), async (request, response
     const images_url = [];
     const files = JSON.parse(JSON.stringify(request.files));
     files.forEach((file) => {
-        images_url.push(file.destination);
+        images_url.push(file.location);
     });
     const denunciationRepository = typeorm_1.getRepository(denunciation_1.default);
     const denunciation = {
