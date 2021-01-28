@@ -38,7 +38,7 @@ denunciationsRouter.post(
 
     const res = await denunciationRepository.save(denunciation);
 
-    return response.json(res);
+    return response.status(200).json(res);
   },
 );
 /* Deletar Denuncias */
