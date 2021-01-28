@@ -25,7 +25,7 @@ denunciationsRouter.post(
     const images_url: string[] = [];
     const files = JSON.parse(JSON.stringify(request.files));
     files.forEach((file: Express.Multer.File) => {
-      images_url.push(file.path);
+      images_url.push(file.destination);
     });
 
     const denunciationRepository = getRepository(Denunciation);
